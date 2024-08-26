@@ -11,13 +11,30 @@ public class PrintAndHide : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        i = 4;
+        i = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject.name + ":" + i);
-        i++;
+        Debug.Log(gameObject.name + ":" + ++i);
+        
+
+        if (gameObject.tag == "Red" && i == 100)
+        {
+            gameObject.SetActive(false);
+        }
+
+        if (gameObject.tag == "Blue" && i == Random.Range(150, 251))
+        {
+            if (rend != null)
+            {
+                rend.enabled = false;
+
+            }
+            
+            
+        }
+
     }
 }
